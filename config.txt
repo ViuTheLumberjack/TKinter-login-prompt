@@ -1,0 +1,29 @@
+[Password]
+; il numero totale di password da leggere dal file, conta anche quella giusta
+numero_password=3
+; la password per effettuare l'accesso
+password_accesso=Last_Moviemaker
+; elenco delle password da provare prima della password giusta
+; devono essere 'numero_password' - 1 stringhe
+password1=Monster
+password2=Nietzsche
+
+[Sfondo]
+; numero di colonne da far vedere sullo sfondo
+numero_colonne=20
+; numero di millisecondi prima di aggiornare le colonne di sfondo
+frequenza_aggiornamento=100
+
+; l'unità di riferimento sono i millisecondi
+[Tempistiche]
+; attesa prima di iniziare a scrivere la password
+attesa_iniziale=2500
+; quanto devo aspettare dopo aver inserito la 
+; password corretta
+attesa_login_corretto=2500
+; attesa tra l'inserimento delle password
+attesa_riprova=2000
+; tempo tra per l'inserimento di caratteri consecutivi
+attesa_carattere=500
+; tempo tra ultimo carattere e la simulazione dell'ENTER
+attesa_invio=1500
