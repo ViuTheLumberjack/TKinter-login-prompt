@@ -21,8 +21,8 @@ ENTER_TIME = int(config.get('Tempistiche', 'attesa_invio'))
 class Fullscreen_Window:
     def __init__(self):
         self.tk = tk.Tk()
-        self.tk.attributes('-zoomed', True)  # This just maximizes it so we can see the window. It's nothing to do with fullscreen.
-        self.is_fullscreen = False
+        self.is_fullscreen = True
+        self.tk.attributes("-fullscreen", self.is_fullscreen)
         self.tk.bind("<F11>", self.toggle_fullscreen)
         self.tk.bind("<Escape>", self.end_fullscreen)
 
