@@ -27,3 +27,7 @@ attesa_riprova=2000
 attesa_carattere=500
 ; tempo tra ultimo carattere e la simulazione dell'ENTER
 attesa_invio=1500
+
+[Filesystem]
+; nome della cartella che continene i dati della famiglia
+cartella_dati=FS
