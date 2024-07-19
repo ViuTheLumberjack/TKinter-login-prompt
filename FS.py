@@ -98,7 +98,6 @@ class FileSystem_Window(Fullscreen_Window):
         # leggo la cartella da dove parte il programma e faccio vedere i 
         # contenuti della directory che contiene la struttura da far vedere
         self.base_path =  os.path.dirname(sys.executable if sys.executable else os.path.realpath(__file__)) + f'/{FS}'
-        print(self.base_path)
         self.current_path = self.base_path
         self.entries = tk.StringVar(value=os.listdir(self.current_path))
         # inizializzo la struttura 

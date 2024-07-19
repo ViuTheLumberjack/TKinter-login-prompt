@@ -3,6 +3,7 @@ import random
 import string
 import configparser
 import os
+import sys
 import markdown
 from tkinterweb import HtmlFrame
 from PIL import ImageTk, Image
@@ -112,8 +113,8 @@ class Login_Window(Fullscreen_Window):
 
     def open_filesystem(self):
         self.grid.destroy()
-        filesystem = FileSystem_Window()
         self.kill_window()
+        filesystem = FileSystem_Window()
         filesystem.tk.mainloop()
 
 
@@ -139,7 +140,7 @@ class FileSystem_Window(Fullscreen_Window):
         self.grid.place(relx=0.5, rely=0.5, relwidth=.90, relheight=.90, anchor=tk.CENTER)
         # leggo la cartella da dove parte il programma e faccio vedere i 
         # contenuti della directory che contiene la struttura da far vedere
-        self.base_path =  os.path.dirname(os.path.realpath(__file__)) + f'/{FS}'
+        self.base_path =  os.path.dirname(sys.executable if sys.executable else os.path.realpath(__file__)) + f'\\{FS}'
         self.current_path = self.base_path
         self.entries = tk.StringVar(value=os.listdir(self.current_path))
         # inizializzo la struttura 
@@ -151,9 +152,9 @@ class FileSystem_Window(Fullscreen_Window):
                                    selectmode=tk.SINGLE, listvariable=self.entries, 
                                    width=_width, height=_height, selectbackground='black', selectforeground='green')
         
+        self.listbox.grid(row=_row, column=_column, columnspan=2) 
         self.listbox.select_set(0) 
         self.listbox.focus_set()
-        self.listbox.grid(row=_row, column=_column, columnspan=2) 
 
     def change_path(self, event=None):
         selection = self.listbox.get(self.listbox.curselection())
